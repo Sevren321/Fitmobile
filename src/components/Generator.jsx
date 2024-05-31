@@ -13,7 +13,7 @@ function Header (props) {
     return (
         <div className='flex flex-col gap-4'>
             <div className='flex items-center justify-center gap-2'>
-                <p className='text-3xl sm:text-4xl md:text-5xl font-semibold text-slate-400'>{index}</p>
+                <p className='text-3xl sm:text-4xl md:text-5xl font-semibold text-red-700'>{index}</p>
                 <h4 className='text-xl sm:text-2xl md:text-3xl'>{title}</h4>
             </div>
             <p className='text-sm sm:text-base mx-auto'>{description}</p>
@@ -66,8 +66,8 @@ export default function Generator(props) {
 
 
   return (
-    <SectionWrapper id={'generate'} header={"generate your workout"} title={['It\'s', 'Huge', 'o\'clock']}>
-        <Header index={'01'} title={'Pick your poison'} description={"Select the workout you wish to endure"} />
+    <SectionWrapper id={'generate'} header={"generate your workout"} title={['Get', 'IN', 'there']}>
+        <Header index={'01'} title={'Choose your workout'} description={"Select the exercise you wish to endure"} />
         <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
 
             {Object.keys(WORKOUTS).map((type, typeIndex) => {
@@ -76,14 +76,14 @@ export default function Generator(props) {
                         setMuscles([])
                         setPoison(type)
                         //set conditional styles first button is default / updates with hover effect dont forget space between quotes
-                    }} className={'bg-slate-950 border px-4 py-3 rounded-lg duration-200 hover:border-blue-600 ' + (type === poison ? ' border-blue-600 ' : ' border-blue-400')}  key={typeIndex}>
+                    }} className={'bg-slate-950 border px-4 py-3 rounded-lg duration-200 hover:border-red-600 ' + (type === poison ? ' border-red-600 ' : ' border-red-400')}  key={typeIndex}>
                         <p className='capitalize'>{type.replaceAll('_', " ")}</p>
                     </button>
                 )
             })}
         </div>
-        <Header index={'02'} title={'Lock on targets'} description={"Select the muscles judged for annihilation"} />
-        <div className='bg-slate-950 border border-solid border-blue-400 rounded-lg flex flex-col '>
+        <Header index={'02'} title={'Lock in your targets'} description={"Select a muscle group for annihilation"} />
+        <div className='bg-slate-950 border border-solid border-red-400 rounded-lg hover:border-red-600 flex flex-col '>
             <button onClick={toggleModal} className='relative py-3 flex item-center justify-center'> 
                 <p className='capitalize'>{muscles.length == 0 ? 'Select muscle groups' : muscles.join(' ')}</p>
                 <i className="fa-solid fa-caret-down absolute right-3 top-1/2 -translate-y-1/2"></i> 
@@ -96,7 +96,7 @@ export default function Generator(props) {
                             <button onClick={() => {
                                 //click and add muscle groups up to 3
                                 updateMuscles(muscleGroup)
-                            }} key={muscleGroupIndex} className={'hover:text-blue-400 duration-200 ' + (muscles.includes(muscleGroup) ? ' text-blue-400': ' ')}>
+                            }} key={muscleGroupIndex} className={'hover:text-red-400 duration-200 ' + (muscles.includes(muscleGroup) ? ' text-red-400': ' ')}>
                                 <p className='uppercase'>{muscleGroup}</p>
                             </button>
                         )
@@ -112,7 +112,7 @@ export default function Generator(props) {
                     <button onClick={() => {
                         setGoal(scheme)
                         //changed type to scheme and poison to goals
-                    }} className={'bg-slate-950 px-4 border py-3 rounded-lg duration-200 hover:border-blue-600 ' + (scheme === goal ? ' border-blue-600 ' : ' border-blue-400')}  key={schemeIndex}>
+                    }} className={'bg-slate-950 px-4 border py-3 rounded-lg duration-200 hover:border-red-600 ' + (scheme === goal ? ' border-red-600 ' : ' border-red-400')}  key={schemeIndex}>
                         <p className='capitalize'>{scheme.replaceAll('_', " ")}</p>
                     </button>
                 )

@@ -25,7 +25,7 @@ function App() {
   }
 
   return (
-    <main className='min-h-screen flex flex-col bg-gradient-to-r from-slate-800 to-slate-950 text-white text-sm sm:text-base'>
+    <main className='min-h-screen flex flex-col bg-gradient-to-r from-black to-gray-900 text-white text-sm sm:text-base'>
      <Hero />
      <Generator 
      // instead to have access on our top level component the App

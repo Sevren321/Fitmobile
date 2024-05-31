@@ -8,7 +8,7 @@ export default function Hero() {
         <p>Your #1 Exercise App</p>
         <h1 className='uppercase font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl'>Fit<span className='text-red-700'> Mobile</span></h1>
         </div>
-        <p className='text-sm md:text-base font-light'>I hereby acknowledge and accept my <span className='text-red-600'>duty</span> to become the greatest <span className='text-red-600'>me</span> that will ever be know to <span className='text-red-600'>Mankind</span> and that I will begin the first steps to full my <span className='text-red-600'>ultimate destiny.</span></p>
+        <p className='text-sm md:text-base font-light'>I hereby acknowledge and accept my <span className='text-red-600'>duty</span> to become the greatest <span className='text-red-600'>me</span> that will ever be know to <span className='text-red-600'>Mankind</span> and that I will begin the first steps to fulfill my <span className='text-red-600'>ultimate destiny.</span></p>
         <Button func={() => {
           window.location.href = '#generate'
         }} text={"Accept & Begin"}></Button>
